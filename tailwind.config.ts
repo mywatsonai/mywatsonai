@@ -8,9 +8,19 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      keyframes: {
+        wave: {
+          "50%": { height: "20%" },
+          "100%": { height: "100%" },
+        },
+        stop: {
+          "0%": { height: "40%" },
+          "100%": { height: "40%" },
+        },
+      },
+      animation: {
+        wave: "wave 0.8s linear infinite",
+        stop: "stop 1s linear infinite",
       },
     },
   },
