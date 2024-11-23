@@ -56,7 +56,7 @@ export const Messages = () => {
     };
 
     getUserPreferences();
-  }, []);
+  }, [router, setIsOnboarding, supabase]);
 
   const askButtonAction = () => {
     if (isLoadingAnswer || !userPreferencesData) return;

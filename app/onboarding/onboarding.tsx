@@ -34,9 +34,17 @@ export default function OnboardingMessage() {
   const buttonAction = () => {
     if (isLoadingAnswer || isLoading) return;
     if (requiresAnswer && !hasAnswered) {
-      isRecording ? handleStopRecording() : handleStartRecording();
+      if (isRecording) {
+        handleStopRecording();
+      } else {
+        handleStartRecording();
+      }
     } else {
-      onboarded ? handleNextMessage() : startOnboarding();
+      if (onboarded) {
+        handleNextMessage();
+      } else {
+        startOnboarding();
+      }
     }
   };
 
